@@ -1,9 +1,11 @@
+# .geminiignore — Files to exclude from Gemini context scanning
+
 # Version Control
-**/.git/
+/.git/
 
 # Autotools & Build System Cache
-**/autom4te.cache/
-aclocal/
+/autom4te.cache/
+/aclocal/
 aclocal.m4
 compile
 config.guess
@@ -33,3 +35,18 @@ __pycache__/
 # OS/System Files
 .DS_Store
 Thumbs.db
+
+# Large/Derived Files
+*.pdf
+*.html
+*.png
+*.jpg
+*.jpeg
+*.gif
+*.avif
+*.webp
+*.svg
+
+# ML/Data (DVC-tracked, not source)
+models/ml-gnn/.dvc/
+models/model-html/.dvc/
