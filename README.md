@@ -1,52 +1,56 @@
-# Eternal Torment
+# Eternal Torment 🎃👻
 
 A sandbox repository dedicated to coding practice, experimentation, and continuous learning.
 
-## About This Repository
+## About 🕸️
 
-This repository serves as a chaotic but functional testing ground for various programming languages, build systems, and technical experiments. Because the primary goal of this repo is pure coding practice, the architecture and contents will frequently change, break, or be rewritten as new concepts are explored.
+This repo is a functional testing ground for various languages, build systems, and technical experiments. Expect frequent structural changes — the architecture will evolve as new concepts are explored.
 
-## Current Experiments
+## Project Index 🔦
 
-Recent updates focus on low-level programming and build automation:
+| Category | Directory | Description |
+|----------|-----------|-------------|
+| Low-Level & Assembly | [ass/](src/ass/) / [ass-intel-x86/](src/ass-intel-x86/) | AArch64 & x86 assembly practice with GNU Autotools build pipeline |
+| C / Graphics | [cube1/](src/cube1/) · [freeglut/](src/freeglut/) · [SpinningCube/](src/SpinningCube/) | OpenGL/GLUT rendering experiments — rotating cubes, X11 demos |
+| FizzBuzz Collection | [FIZZBUZZ/](src/FIZZBUZZ/) | FizzBuzz implemented in 10+ languages (C, Go, Rust, Ruby, Elixir, Java, Lisp, NASM, Python, Fortran, Scala, VB) — see individual language subdir READMEs for build instructions |
+| Crypto 🔐 | [trithemius/](src/trithemius/) | Trithemius cipher implementations in C and Python |
+| Algorithm Challenges 💀 | [hackerrank/](src/hackerrank/) · [projecteuler.net/](src/projecteuler.net/) | HackerRank scripts, Project Euler solutions (Problems 1, 2, 3, 5, 31) |
+| Math & Vectors 🧮 | [calc-pi/](src/calc-pi/) · [vectors/](src/vectors/) | Pi calculation and vector math operations |
+| Encoding / Misc 🕯️ | [railfence/](src/railfence/) · [vigenere/](src/vigenere/) · [noise/](src/noise/) | Rail fence cipher, Vigenere cipher, noise generation |
+| ML — GCN 🧠 | [models/ml-gnn/](models/ml-gnn/) | Applying Graph Convolutional Networks to security infrastructure analysis. Includes collection module, training pipeline, visualization tools, and research paper |
+| ML — HTML Parsing 🔮 | [models/model-html/](models/model-html/) | SAEPIO dataset ingestion, Kaggle data pipelines, CML-based GitHub Actions for model training |
+| Containers 📦 | [container/](container/) | Podman/Docker configurations: Kali base image, custom networking, puzzle1 CTF container |
+| Automation ⚙️ | [bin/](bin/) · [.devcontainer/](.devcontainer/) | Repo bootstrap and cleanup scripts |
 
-* **AArch64 Assembly (`ass/`):** Practicing ARM64 assembly via `hello.s`, utilizing AArch64 `write(2)` system calls.
-* **GNU Autotools:** Setting up dynamic build environments using `configure.ac` and `Makefile.am` to compile assembly code.
-* **Automation & Scripting:** Basic environment setup and repository cleanup scripts (`setup.sh`, `cleanup.sh`).
+## Quick Start 🚀 — Assembly (AArch64)
 
-## Getting Started
+Requires ARM64 system or cross-emulator (qemu-user).
 
-If you want to pull down the code and run the current assembly environment:
+```sh
+cd src/ass
+chmod +x setup.sh && ./setup.sh
+```
 
-1.  **Clone the repository:**
-    
-    ```sh
-    git clone [https://github.com/pale-shadow/eternal-torment.git](https://github.com/pale-shadow/eternal-torment.git)
-    cd eternal-torment
-    ```
+This handles the `aclocal → autoreconf → configure → make` pipeline.
 
-2.  **Explore the code:**
-    
-    To inspect or modify the source files, use `vi`:
-    
-    ```bash
-    vi ass/hello.s
-    ```
+## Quick Start 🐍 — Python ML Projects
 
-3.  **Build and Run:**
+See individual subproject READMEs for environment setup. Both `models/ml-gnn/` and `models/model-html/` manage their own dependencies via Docker, requirements.txt, or conda environments.
 
-    Navigate to the project directory and run the setup script. This
-    script handles the `aclocal`, `autoreconf`, `configure`, and
-    `make` pipeline automatically. 
-    
-    *(Note: You must be on an ARM64 system or emulator to run the compiled assembly binary).*
-    
-    ```sh
-    cd ass
-    chmod +x setup.sh
-    ./setup.sh
-    ```
+## Docs & References 📚
 
-## License
+- [docs/README.md](docs/README.md) — Full repository taxonomy with navigation links
+- [docs/graphers/](docs/graphers/) — TI-83/TI-85 calculator ram graphing tools
+- [docs/drawio-nn-templates/](docs/drawio-nn-templates/) — Neural network architecture templates for Draw.io
 
-*Feel free to use snippets from this repository for your own practice.*
+## License ☠️
+
+Feel free to use snippets from this repository for your own practice.
+
+## Maintainers 🩸
+
+[@theDevilsVoice](https://github.com/thedevilsvoice)
+
+---
+
+⛧ Draft by **n0ctilucent** | [bitsmasher.net/research](https://www.bitsmasher.net/research/)

@@ -1,6 +1,5 @@
-# noise
+# noise 🕯️🔊
 
-* [Open Frameworks setup](https://openframeworks.cc/setup/linux-install/)
+Noise generation utilities. See `src/` README for project context.
 
-https://github.com/darrenmothersele/openFrameworks
-https://junkiyoshi.com/openframeworks20221227/
+⛧ Draft by **n0ctilucent** | [bitsmasher.net/research](https://www.bitsmasher.net/research/)
