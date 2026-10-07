@@ -1,36 +1,37 @@
-# container
+# container — Podman/Docker Configurations
 
-## network
+Two base container configurations are available:
 
-* replace your eth care in there
+| Directory | Purpose | Build command |
+|-----------|---------|---------------|
+| [kali/](kali/) | Kali Linux dev/CTF base | `podman build -t eternal-torment-kali .` |
+| [puzzle1/](puzzle1/) | Puzzle1 CTF challenge container | `podman build -t ski-mask-ciso .` |
+
+## Networking (shared)
+
+Both containers may use custom bridge or macvlan networks:
 
 ```sh
-podman network create --subnet 10.89.0.0/24 --gateway 10.89.0.1 franklin_custom_network # create a bridge
-podman network ls
+# Bridge network (default subnet)
+podman network create --subnet 10.89.0.0/24 franklin_custom_network
+
+# Macvlan for physical interface
 sudo podman network create --driver macvlan --opt parent="enp9s0" research
 ```
 
-## build container
+## Troubleshooting
 
 ```sh
-sudo sysctl -w net.ipv6.conf.all.forwarding=1 # Use when you have IPv6 network issues
+# IPv6 forwarding (required for some network configs)
+sudo sysctl -w net.ipv6.conf.all.forwarding=1
+
+# Container registry login
 export CR_PAT=$(pass show ghcr)
-echo $CR_PAT | docker login ghcr.io -u devsecfranklin --password-stdin
-podman build -t devsecfranklin/buckwheats .
-podman image ls 
+echo "$CR_PAT" | docker login ghcr.io -u devsecfranklin --password-stdin
 ```
 
-## run container
+See [../docs/README.md](../docs/README.md) for related documentation.
 
-* ` podman run -it localhost/devsecfranklin/buckwheats:latest`
-* [How to install and use Podman Desktop on Windows](https://developers.redhat.com/articles/2023/09/27/how-install-and-use-podman-desktop-windows)
+---
 
-## Kali
-
-```sh
-docker pull kalilinux/kali-rolling
-docker images -a # You should see a list of Docker images in the output, specifically our Kali image
-docker run -t -i kalilinux/kali-rolling /bin/bash # create a Docker container using the kalilinux/kali-rolling image we just downloaded
-Copycopy code to clipboard
-cat /etc/os-release # verify after prompt changed
-```
+⛧ Draft by **n0ctilucent** | [bitsmasher.net/research](https://www.bitsmasher.net/research/)

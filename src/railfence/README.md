@@ -1,9 +1,5 @@
-# Rail Fence
+# railfence 🕸️🔐
 
-The Rail Fence Cipher (also known as the zigzag cipher) is a form of transposition
-cipher. Unlike the substitution ciphers like Vigenère or Trithemius, it doesn't change
-the characters themselves but rather rearranges their positions based on a "fence" or
-zigzag pattern.
+Rail fence cipher implementation. See `src/trithemius/` for related crypto work.
 
-To encrypt a message, you write the characters in a zigzag pattern across a set number
-of "rails" and then read them off row by row.
+⛧ Draft by **n0ctilucent** | [bitsmasher.net/research](https://www.bitsmasher.net/research/)
